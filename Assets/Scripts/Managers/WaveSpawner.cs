@@ -3,14 +3,30 @@ using UnityEngine;
 
 public class WaveSpawner : MonoBehaviour
 {
-    Wave wave;
+    public static WaveSpawner Instance;
 
-    List<WaveDescriptor> waveDescriptors;
+    public delegate void OnWaveTimerChanged(float value);
+
+    public OnWaveTimerChanged onWaveTimerChanged;
+
+    [SerializeField] Wave wave;
+    [SerializeField] float waveTimer;
+
+    [SerializeField] List<WaveDescriptor> waveDescriptors;
 
     Transform spawnPoint;
 
     private void Awake()
     {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+
         waveDescriptors = new List<WaveDescriptor>();
 
         spawnPoint = transform;
@@ -24,34 +40,53 @@ public class WaveSpawner : MonoBehaviour
 
     private void SpawnEnemies()
     {
+        if (waveTimer >= 0)
+        {
+            waveTimer -= Time.deltaTime;
+            onWaveTimerChanged?.Invoke(waveTimer);
+            return;
+        }
+
         for (int i = 0; i < waveDescriptors.Count; i++)
         {
-            WaveDescriptor wave = waveDescriptors[i];
+            WaveDescriptor waveDescriptor = waveDescriptors[i];
 
-            if (wave.spawnCount <= 0)
+            if (waveDescriptor.spawnCount <= 0)
             {
-                waveDescriptors.Remove(wave);
+                waveDescriptors.Remove(waveDescriptor);
                 i--;
                 continue;
             }
 
-            if (wave.spawnRate >= 0)
+            if (waveDescriptor.spawnRate <= 0)
             {
-                GameObject enemyClone = Instantiate(wave.enemyPrefab, spawnPoint.position, spawnPoint.rotation, gameObject.transform);
-                MovementManager.Instance.AddEnemy(enemyClone.GetComponent<Enemy>());
-                wave.spawnCount--;
-                wave.ResetSpawnTimer();
+                GameObject enemyClone = Instantiate(waveDescriptor.enemyPrefab, spawnPoint.position, spawnPoint.rotation, gameObject.transform);
+                Enemy enemy = enemyClone.GetComponent<Enemy>();
+
+                enemy.Wave = wave;
+
+                MovementManager.Instance.AddEnemy(enemy);
+
+                waveDescriptor.spawnCount--;
+                waveDescriptor.ResetSpawnTimer();
             }
 
-            wave.spawnRate -= Time.deltaTime;
+            waveDescriptor.spawnRate -= Time.deltaTime;
         }
     }
 
     private void CheckWave() 
     {
-        if (waveDescriptors.Count == 0)
+        if (waveDescriptors.Count == 0 || wave.AreAllEnemiesDead())
         {
-            RoundManager.Instance.GetNextWave(ref waveDescriptors);
+            wave = RoundManager.Instance.GetNextWave(ref waveDescriptors);
+
+            if (wave == null)
+            {
+                return;
+            }
+            waveTimer = wave.TimeForWave();
+            onWaveTimerChanged?.Invoke(waveTimer);
         }
     }
 }

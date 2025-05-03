@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d191c4c716a4d0e41b1971bad2d6a4a5, type: 3}
   m_Name: round 3
   m_EditorClassIdentifier: 
-  Waves: []
+  Waves:
+  - {fileID: 11400000, guid: 35d4300539b322444b21cf9110def6b5, type: 2}
+  - {fileID: 11400000, guid: 9929ed38a8d33ce4894d857bc6a10aa2, type: 2}
+  - {fileID: 11400000, guid: 2e698c18706e4e7408ba74b7f7ff8db0, type: 2}

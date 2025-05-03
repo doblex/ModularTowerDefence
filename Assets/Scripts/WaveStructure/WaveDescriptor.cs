@@ -10,9 +10,9 @@ public class WaveDescriptor
     public EnemyWave enemyWave;
     public GameObject enemyPrefab;
 
-    public WaveDescriptor(float spawnRate, int spawnCount,GameObject enemyPrefab ,EnemyWave enemyWave)
+    public WaveDescriptor(int spawnCount,GameObject enemyPrefab ,EnemyWave enemyWave)
     {
-        this.spawnRate = spawnRate;
+        this.spawnRate = 0;
         this.spawnCount = spawnCount;
         this.enemyPrefab = enemyPrefab;
         this.enemyWave = enemyWave;

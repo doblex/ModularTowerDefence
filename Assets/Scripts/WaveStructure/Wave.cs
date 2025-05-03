@@ -10,7 +10,37 @@ public class Wave : ScriptableObject
 
     [SerializeField] float timeforWave;
 
+    int enemiesToSpawn = 0;
+    bool allEnemiesDead = false;
+
     public float TimeForWave() =>  timeforWave;
+    public bool AreAllEnemiesDead() => allEnemiesDead;
+
+
+    private void SetUpEnemiesToSpawn()
+    {
+        enemiesToSpawn = 0;
+        allEnemiesDead = false;
+
+        foreach (EnemyWave enemyWave in EnemyWaves)
+        {
+            enemiesToSpawn += enemyWave.GetWaveDescriptor().spawnCount;
+        }
+    }
+
+    public void EnemyDeath() 
+    {
+        enemiesToSpawn--;
+
+        if (enemiesToSpawn <= 0)
+            allEnemiesDead = true;
+    }
+
+
+    public void Init() 
+    {
+        SetUpEnemiesToSpawn();
+     }
     
 
 }

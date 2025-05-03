@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62483784f8bfeb445a0a6b30ce4bc97b, type: 3}
+  m_Name: Exploding Turret
+  m_EditorClassIdentifier: 
+  placementType: 1
+  objectName: Exploding Turret
+  description: description 3
+  cost: 30
+  towerPoint: 2
+  objectPrefab: {fileID: 3734028218918922540, guid: 9ea808b7de34bfe4cb5b48231a1a339d, type: 3}
+  isSelected: 0
+  isPurchasable: 1
+  damage: 10
+  fireRate: 2
+  range: 5
+  projectilePrefab: {fileID: 4707983200551823350, guid: 05fe360688daf9e4e96ee6968f64ad32, type: 3}

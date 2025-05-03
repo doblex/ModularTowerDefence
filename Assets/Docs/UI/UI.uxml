@@ -1,0 +1,18 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Docs/GeneralStyleSheet.uss?fileID=7433441132597879392&amp;guid=a6bb4acc55427c54fa9343efb39dc4ac&amp;type=3#GeneralStyleSheet" />
+    <engine:VisualElement style="flex-grow: 1; align-items: center;">
+        <engine:VisualElement name="TurretContainer" style="flex-grow: 1; position: absolute; bottom: 0; left: auto; right: auto; height: 200px; flex-direction: row; justify-content: flex-start; align-content: center; background-color: rgba(0, 0, 0, 0.59); border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px;" />
+    </engine:VisualElement>
+    <engine:VisualElement style="flex-grow: 1; position: absolute; top: 0; right: 0; width: 300px; height: auto; align-items: center; justify-content: space-evenly; background-color: rgba(0, 0, 0, 0.3);">
+        <engine:Label text="WaveTimer" name="Timer" />
+        <engine:Label text="WaveNumber" name="Wave" />
+    </engine:VisualElement>
+    <engine:VisualElement style="flex-grow: 1; position: absolute; top: 0; right: auto; width: 300px; height: auto; align-items: center; justify-content: space-evenly; background-color: rgba(0, 0, 0, 0.3); left: 0;">
+        <engine:VisualElement name="BarContainer" style="flex-grow: 1; background-color: rgb(108, 99, 99); width: 200px; height: 30px; justify-content: center; align-items: flex-start; border-top-left-radius: 19px; border-top-right-radius: 19px; border-bottom-right-radius: 19px; border-bottom-left-radius: 19px; border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); overflow: hidden; margin-top: 10px; margin-right: 10px; margin-bottom: 10px; margin-left: 10px;">
+            <engine:VisualElement name="FillBar" style="flex-grow: 1; background-color: rgb(0, 255, 2); width: 100%; border-top-left-radius: 0; border-top-right-radius: 0; border-bottom-right-radius: 0; border-bottom-left-radius: 0; height: auto;">
+                <engine:Label text="100%" name="LifePercent" style="color: rgb(0, 0, 0); top: 0; right: 0; left: 0; bottom: 0; position: absolute; height: auto; -unity-text-align: middle-left; -unity-font-style: bold;" />
+            </engine:VisualElement>
+        </engine:VisualElement>
+        <engine:Label text="Currency" name="Currency" />
+    </engine:VisualElement>
+</engine:UXML>

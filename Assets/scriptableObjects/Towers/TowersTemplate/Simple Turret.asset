@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62483784f8bfeb445a0a6b30ce4bc97b, type: 3}
+  m_Name: Simple Turret
+  m_EditorClassIdentifier: 
+  placementType: 1
+  objectName: Simple Turret
+  description: description 1
+  cost: 10
+  towerPoint: 1
+  objectPrefab: {fileID: 3734028218918922540, guid: e45a69d3436853840a2b371e83de9330, type: 3}
+  isSelected: 1
+  isPurchasable: 1
+  damage: 10
+  fireRate: 1
+  range: 8
+  projectilePrefab: {fileID: 4707983200551823350, guid: 91d0929baeddc7945918534d57be4378, type: 3}

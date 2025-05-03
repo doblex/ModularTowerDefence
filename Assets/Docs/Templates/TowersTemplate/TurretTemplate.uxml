@@ -1,0 +1,24 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Docs/GeneralStyleSheet.uss?fileID=7433441132597879392&amp;guid=a6bb4acc55427c54fa9343efb39dc4ac&amp;type=3#GeneralStyleSheet" />
+    <engine:VisualElement focusable="true" class="notSelected" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0.45); border-top-width: 4px; border-right-width: 4px; border-bottom-width: 4px; border-left-width: 4px; border-top-left-radius: 15px; border-top-right-radius: 15px; border-bottom-right-radius: 15px; border-bottom-left-radius: 15px; margin-top: 10px; margin-right: 10px; margin-bottom: 10px; margin-left: 10px; overflow: hidden;">
+        <engine:Label text="Title" name="Title" class="TemplateTitle" style="-unity-text-align: middle-center; -unity-font-style: bold; font-size: 20px;" />
+        <engine:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0.33);">
+            <engine:VisualElement style="flex-grow: 1; flex-direction: row; justify-content: space-between;">
+                <engine:VisualElement class="stats" style="flex-grow: 1; flex-direction: row; justify-content: center;">
+                    <engine:Label text="0" name="Cost" style="width: auto;" />
+                </engine:VisualElement>
+                <engine:VisualElement class="stats" style="flex-grow: 1; width: auto; flex-direction: row; justify-content: center;">
+                    <engine:Label text="0" name="UpgradeCost" style="width: auto;" />
+                    <engine:VisualElement style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Images/upgrade.png?fileID=2800000&amp;guid=cc34a666290c46246a4954218d1d3a46&amp;type=3#upgrade&quot;);" />
+                </engine:VisualElement>
+            </engine:VisualElement>
+            <engine:VisualElement style="flex-grow: 1;">
+                <engine:Label text="FireRate" name="FireRate" class="stats" />
+                <engine:VisualElement class="stats" style="flex-grow: 1; flex-direction: row; justify-content: center;">
+                    <engine:Label text="Damage" name="Damage" style="width: 70%;" />
+                    <engine:VisualElement style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Images/damage.png?fileID=2800000&amp;guid=a21ef702776dc1a4b809705be3067347&amp;type=3#damage&quot;); width: 20%;" />
+                </engine:VisualElement>
+            </engine:VisualElement>
+        </engine:VisualElement>
+    </engine:VisualElement>
+</engine:UXML>

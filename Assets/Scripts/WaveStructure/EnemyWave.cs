@@ -11,7 +11,7 @@ public class  EnemyWave : ScriptableObject
 
     public WaveDescriptor GetWaveDescriptor()
     {
-        return new WaveDescriptor(spawnRate, Quantity, enemyPrefab , this);
+        return new WaveDescriptor(Quantity, enemyPrefab , this);
     }
 
     public float GetSpawnRate() => spawnRate;
